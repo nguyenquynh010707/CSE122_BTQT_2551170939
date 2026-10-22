@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Đăng ký CLB Lập trình Web</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body style="background:#e9ecef">
+<div class="container my-5" style="max-width:640px">
+  <div class="card shadow">
+    <div class="card-header bg-success text-white text-center">
+      <h4 class="my-2">Đăng ký tham gia CLB Lập trình Web</h4>
+    </div>
+    <form class="card-body row g-3 p-4">
+      <div class="col-md-6">
+        <label class="form-label">Họ và tên</label>
+        <input class="form-control" placeholder="Nguyễn Văn A" required>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Mã sinh viên</label>
+        <input class="form-control" placeholder="22xxxxxx" required>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control" placeholder="sv@tlu.edu.vn" required>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Số điện thoại</label>
+        <input type="tel" class="form-control" placeholder="09xxxxxxxx" required>
+      </div>
+
+      <div class="col-12">
+        <label class="form-label d-block">Trình độ</label>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="td" id="td1" checked>
+          <label class="form-check-label" for="td1">Cơ bản</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="td" id="td2">
+          <label class="form-check-label" for="td2">Khá</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="td" id="td3">
+          <label class="form-check-label" for="td3">Tốt</label>
+        </div>
+      </div>
+
+      <div class="col-12">
+        <label class="form-label">Chọn lớp</label>
+        <select class="form-select" required>
+          <option>67CNTT1</option>
+          <option>67CNTT2</option>
+          <option>67CNTT3</option>
+        </select>
+      </div>
+
+      <div class="col-12 form-check ms-2">
+        <input class="form-check-input" type="checkbox" id="ck" required>
+        <label class="form-check-label" for="ck">Tôi cam kết tự làm bài và quay video OBS</label>
+      </div>
+
+      <div class="col-12 d-grid gap-2 d-md-flex justify-content-md-end">
+        <button type="reset" class="btn btn-outline-secondary">Nhập lại</button>
+        <button type="submit" class="btn btn-success">Đăng ký</button>
+      </div>
+    </form>
+  </div>
+</div>
+</body>
+</html>

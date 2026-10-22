@@ -1,0 +1,95 @@
+/* Nền trang: ảnh Nen.gif lặp lại */
+body {
+  background-image: url(Nen.gif);
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+/* Khung trắng bao ngoài, bo góc, có bóng */
+#khung {
+  width: 520px;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Ô lịch: viền #ccc, nền trắng, bo góc, căn giữa */
+#o-lich {
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  font-family: Georgia, serif;   /* font có chân giống ảnh */
+  display: none;                 /* ẩn cho đến khi bấm nút */
+}
+
+/* Năm: đỏ, nhỏ */
+#nam-kq {
+  color: #C62828;
+  font-size: 18px;
+  margin: 0;
+}
+
+/* Tháng và thứ: xanh, cỡ 18px (to hơn một chút cho giống ảnh) */
+#thang-kq, #thu-kq {
+  color: #1565C0;
+  font-size: 24px;
+  margin: 5px 0;
+}
+
+/* Số ngày: đỏ, rất lớn */
+#ngay-kq {
+  color: #C62828;
+  font-size: 52px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+/* Lời chào: đỏ, in nghiêng */
+#loi-chao {
+  color: #C62828;
+  font-style: italic;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 26px;
+  margin: 25px 0;
+}
+
+/* Form nhập: viền xanh #1565C0, các ô dàn đều */
+#form-nhap {
+  border: 2px solid #1565C0;
+  border-radius: 10px;
+  padding: 20px 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* Mỗi ô nhập: nhãn nằm trên, ô nhập nằm dưới */
+.o-nhap label {
+  display: block;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.o-nhap input {
+  width: 80px;
+  padding: 8px;
+  font-size: 18px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Nút In lịch: nền xám xanh, chữ trắng */
+#form-nhap button {
+  width: 70px;
+  background-color: #546E7A;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>CSS Filter</title>
+<link rel="stylesheet" href="bai20.css">
+</head>
+<body>
+<svg width="0" height="0">
+  <filter id="wave">
+    <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="2" result="t"/>
+    <feDisplacementMap in="SourceGraphic" in2="t" scale="20"/>
+  </filter>
+</svg>
+
+<div class="frame">
+  <img id="pic" class="gray" src="Anh/Bai20/hoahong.gif" alt="Hoa hồng">
+  <div class="text">Special For You</div>
+</div>
+
+<div class="bar">
+  <button data-e="gray" class="on">Gray</button>
+  <button data-e="xray">Xray</button>
+  <button data-e="invert">Invert</button>
+  <button data-e="fliph">FlipH</button>
+  <button data-e="flipv">FlipV</button>
+  <button data-e="glow">Glow</button>
+  <button data-e="shadow">Shadow</button>
+  <button data-e="bold">Bold Shadow</button>
+  <button data-e="drop">DropShadow</button>
+  <button data-e="blur">Blur</button>
+  <button data-e="wave">Wave</button>
+  <button data-e="mask">Mask</button>
+  <button data-e="alpha">Alpha</button>
+</div>
+
+<script>
+const pic = document.getElementById('pic');
+const btns = document.querySelectorAll('button');
+btns.forEach(b => b.onclick = () => {
+  btns.forEach(x => x.classList.remove('on'));
+  b.classList.add('on');
+  pic.className = b.dataset.e;
+});
+</script>
+
+</body>
+</html>

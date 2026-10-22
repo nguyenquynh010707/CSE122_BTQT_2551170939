@@ -1,0 +1,86 @@
+:root {
+  --nen: #f8fafc;
+  --chu: #0f172a;
+  --the: #ffffff;
+  --vien: #cbd5e1;
+  --nhan: #2563eb;
+}
+
+body.toi {
+  --nen: #0f172a;
+  --chu: #e2e8f0;
+  --the: #1e293b;
+  --vien: #334155;
+  --nhan: #60a5fa;
+}
+
+body {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 24px;
+  font-family: Arial, sans-serif;
+  background: var(--nen);
+  color: var(--chu);
+  transition: background .4s, color .4s;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+.the {
+  background: var(--the);
+  border: 1px solid var(--vien);
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin: 16px 0;
+  transition: background .4s, border-color .4s;
+}
+
+.the h3 {
+  margin: 0 0 6px;
+  font-size: 15px;
+  color: var(--nhan);
+}
+
+.the p {
+  margin: 0;
+  font-size: 13px;
+}
+
+#sw {
+  appearance: none;
+  position: relative;
+  width: 54px;
+  height: 28px;
+  border-radius: 14px;
+  background: #2563eb;
+  cursor: pointer;
+  transition: background .4s;
+}
+
+#sw:checked {
+  background: #60a5fa;
+}
+
+#sw::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #fff;
+  transition: left .3s;
+}
+
+#sw:checked::after {
+  left: 29px;
+}

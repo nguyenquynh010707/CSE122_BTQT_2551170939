@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 12 - In lịch</title>
+  <link rel="stylesheet" href="bai12.css">
+</head>
+
+<body>
+  <div id="khung">
+
+    <!-- Ô lịch (kết quả) -->
+    <div id="o-lich">
+      <p id="nam-kq"></p>
+      <p id="thang-kq"></p>
+      <p id="ngay-kq"></p>
+      <p id="thu-kq"></p>
+    </div>
+
+    <!-- Lời chào -->
+    <p id="loi-chao"></p>
+
+    <!-- Form nhập: 3 ô + 1 nút -->
+    <div id="form-nhap">
+      <div class="o-nhap">
+        <label for="ngay">Ngày</label>
+        <input type="text" id="ngay">
+      </div>
+      <div class="o-nhap">
+        <label for="thang">Tháng</label>
+        <input type="text" id="thang">
+      </div>
+      <div class="o-nhap">
+        <label for="nam">Năm</label>
+        <input type="text" id="nam">
+      </div>
+      <button id="nut">In lịch</button>
+    </div>
+
+  </div>
+  <script src="bai12.js"></script>
+</body>
+</html>

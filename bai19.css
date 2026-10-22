@@ -1,0 +1,27 @@
+body{
+  font-family: 'Times New Roman', Times, serif;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+}
+img{
+  float: left;
+  width: 300px;
+  margin-right: 24px;
+  border-radius: 12px;
+  box-shadow: 4px 6px 12px rgba(0, 0, 0, 35);
+}
+h1{
+  color: #c9a227;
+  text-shadow: 2px 2px 3px #c62828;
+  margin-top: 0;
+}
+.box{
+  overflow: hidden;
+  border: 2px dashed #e07b00;
+  border-radius: 10px;
+  padding: 8px 18px;
+}
+strong{
+  color: #c62828;
+}

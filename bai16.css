@@ -1,0 +1,100 @@
+body {
+  background-color: #f5f6fa;
+  font-family: Arial, sans-serif;
+}
+#the-ung-dung {
+  width: 600px;
+  margin: 30px auto;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  overflow: hidden;               
+}
+#tieu-de {
+  background-color: #6d28d9;
+  color: #ffffff;
+  padding: 25px 30px;
+}
+
+#tieu-de h1 {
+  margin: 0;
+  font-size: 26px;
+}
+
+#tieu-de p {
+  margin: 8px 0 0 0;
+  font-size: 14px;
+  color: #ddd6fe;
+}
+#khung-nhap {
+  display: flex;
+  gap: 12px;
+  padding: 20px 30px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+#o-nhap {
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+}
+#nut-them {
+  background-color: #6d28d9;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 0 24px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#danh-sach {
+  list-style: none;
+  margin: 0;
+  padding: 10px 30px 0 30px;
+}
+#danh-sach li {
+  display: flex;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px dashed #ede9fe;
+  cursor: pointer;
+}
+.o-tich {
+  width: 22px;
+  height: 22px;
+  border: 2px solid #a78bfa;
+  border-radius: 6px;
+  margin-right: 15px;
+}
+
+.ten {
+  flex: 1;
+  font-size: 17px;
+}
+.nut-xoa {
+  background-color: #fde2e2;
+  color: #b91c1c;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 15px;
+  cursor: pointer;
+}
+#danh-sach li.xong .o-tich {
+  background-color: #6d28d9;
+  border-color: #6d28d9;
+}
+
+#danh-sach li.xong .ten {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+#so-con {
+  margin: 0;
+  padding: 25px 30px;
+  color: #6b7280;
+  font-size: 15px;
+}

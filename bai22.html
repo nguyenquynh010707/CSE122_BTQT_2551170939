@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Chế độ Sáng / Tối</title>
+<link rel="stylesheet" href="bai22.css">
+</head>
+<body class="toi">
+<div class="top">
+  <h1>Chế độ Tối / Sáng</h1>
+  <input type="checkbox" id="sw" checked>
+</div>
+
+<div class="the">
+  <h3>Biến CSS (CSS Variables)</h3>
+  <p>Toàn bộ màu sắc được khai báo trong <code>:root</code> và ghi đè bằng class <code>.toi</code>.</p>
+</div>
+<div class="the">
+  <h3>Chuyển đổi bằng JavaScript</h3>
+  <p>Nút gạt thêm/bỏ class <code>.toi</code> trên &lt;body&gt; — mọi thành phần tự đổi màu.</p>
+</div>
+<div class="the">
+  <h3>Chuyển màu mượt</h3>
+  <p>Dùng <code>transition</code> để màu nền và chữ chuyển dần, không bị giật.</p>
+</div>
+
+<small id="note">Đây là giao diện ở chế độ TỐI (đang bật).</small>
+
+<script>
+sw.onchange = () => {
+  document.body.classList.toggle('toi', sw.checked);
+  note.textContent = 'Đây là giao diện ở chế độ ' + (sw.checked ? 'TỐI (đang bật).' : 'SÁNG.');
+};
+</script>
+
+</body>
+</html>

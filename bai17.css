@@ -1,0 +1,43 @@
+body {
+   background-color: #fff7ed;
+   font-family: Arial, sans-serif;
+ }
+
+#the-form {
+  width: 520px;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border: 1px solid #fed7aa;
+  border-radius: 12px;
+}
+
+h1 { color: #c2410c; margin: 0; }
+#mo-ta { color: #6b7280; }
+label { display: block; font-weight: bold; margin: 15px 0 8px 0; }
+
+input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px;
+  font-size: 18px;
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
+}
+input.sai { border-color: #dc2626; background-color: #fef2f2; }
+input.dung { border-color: #16a34a; }
+
+.thong-bao { min-height: 22px; margin-top: 8px; }
+.loi { color: #dc2626; }
+.hop-le { color: #16a34a; }
+
+button {
+  width: 100%;
+  margin-top: 25px;
+  padding: 14px;
+  font-size: 18px;
+  background-color: #c2410c;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang liên hệ(biểu mẫu HTML)</title>
+    <link rel="stylesheet" href="bai10.css">
+</head>
+<body>
+    <form>
+        <header>
+            <h1>Liên hệ với chúng tôi</h1>
+            <p>Vui lòng điền thông tin bên dưới, chúng tôi sẽ phản hồi trong 24 giờ.</p>
+        </header>
+
+        <div class="than">
+            <label>Họ và tên
+                <input type="text" name="hoten">
+            </label>
+
+            <label>Email
+                <input type="email" name="email">
+            </label>
+
+            <label>Số điện thoại
+                <input type="tel" name="sdt">
+            </label>
+
+            <label>Chủ đề
+                <select name="chude">
+                    <option>Hỏi về khoá học</option>
+                    <option>Hỗ trợ kỹ thuật</option>
+                    <option>Góp ý</option>
+                </select>
+            </label>
+
+            <label class="rong">Nội dung
+                <textarea name="noidung" rows="4"></textarea>
+            </label>
+
+            <label class="rong dong-y">
+                <input type="checkbox" name="dongy">
+                Tôi đồng ý nhận email phản hồi.
+            </label>
+
+            <div class="rong">
+                <button type="submit" class="gui">Gửi liên hệ</button>
+                <button type="reset" class="nhap-lai">Nhập lại</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

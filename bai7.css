@@ -1,0 +1,63 @@
+body{
+    background-color: #e8ecef;
+    color: #333333;
+}
+.trang{
+    width: 900px;
+    margin: 20px auto;
+    background-color: white;
+}
+h1{
+    background-color:  #C8102E;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    padding: 18px;
+    margin: 0;
+}
+h2{
+    background-color: #FBE3EB;
+    color: #C8102E;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px;
+    margin: 0;
+}
+.noidung{
+    padding: 25px 30px;
+}
+.cot-trai{
+    float: left;
+    width: 47%;
+    height: 380px;
+    border-right: 1px solid #DDDDDD;
+}
+.cot-phai{
+    float: right;
+    width: 50%;
+}
+h3{
+    color: #C8102E;
+    font-size: 18px;
+}
+h3 li{
+    list-style-type: "□ ";
+}
+
+ul{
+    color: #333333;
+    padding-left: 25px;
+}
+.anh{
+    float: right;
+    width: 245px;
+    height: 300px;
+    object-fit: cover;
+    margin-left: 15px;
+}
+
+.duoi{
+    width: 47%;
+}

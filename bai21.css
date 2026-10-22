@@ -1,0 +1,104 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.page {
+  display: grid;
+  grid-template-columns: 200px 1fr 160px;
+  grid-template-areas:
+    "banner banner banner"
+    "menu   main   ads";
+  min-height: 100vh;
+}
+
+.banner {
+  grid-area: banner;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 110px;
+  padding: 0 20px;
+  background: #C62828 url("Anh/Bai21/Nen_banner.jpg") 0 0 / 100% 100% no-repeat;
+}
+
+.banner img {
+  height: 70px;
+}
+
+.menu {
+  grid-area: menu;
+  background: linear-gradient(#C62828, #8E0000);
+}
+
+.menu a {
+  display: block;
+  padding: 10px 12px;
+  color: #fff;
+  font-size: 13px;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, .2);
+}
+
+.main {
+  grid-area: main;
+  background: #fff;
+  padding: 16px;
+}
+
+.main h2 {
+  color: #C62828;
+  margin-top: 0;
+}
+
+.sub {
+  background: #FFE082;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 13px;
+}
+
+.sub a {
+  color: #000;
+  text-decoration: none;
+  margin-right: 12px;
+}
+
+.content {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 16px;
+  font-size: 13px;
+}
+
+.content p {
+  text-align: center;
+}
+
+.ads {
+  grid-area: ads;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px;
+}
+
+.ads img {
+  width: 100%;
+}
+
+@media (max-width: 700px) {
+  .page {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "banner"
+      "menu"
+      "main"
+      "ads";
+  }
+}

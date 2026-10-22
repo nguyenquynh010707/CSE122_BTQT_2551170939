@@ -1,0 +1,74 @@
+body {
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+}
+
+#may-tinh {
+  width: 400px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #111827;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+#man-hinh {
+  background-color: #022c22;
+  color: #4ade80;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: right;
+  font-family: "Courier New", monospace;
+}
+#phep-tinh {
+  font-size: 20px;
+  min-height: 28px;        
+  word-wrap: break-word;
+}
+#ket-qua {
+  font-size: 48px;
+  font-weight: bold;
+  margin-top: 10px;
+  word-wrap: break-word;
+}
+#ban-phim {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.nut {
+  height: 60px;
+  border: none;
+  border-radius: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.so {
+  background-color: #25313f;
+  color: #e5e7eb;
+}
+
+.so-0 {
+  grid-column: span 2;
+}
+
+.phep {
+  background-color: #0d6efd;
+  color: #ffffff;
+}
+
+.bang {
+  background-color: #16a34a;
+  color: #ffffff;
+}
+
+.xoa {
+  background-color: #dc2626;
+  color: #ffffff;
+}
+
+.nut:hover {
+  opacity: 0.85;
+}

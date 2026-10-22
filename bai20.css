@@ -1,0 +1,78 @@
+body {
+  background: #0f1318;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.frame {
+  display: inline-block;
+  background: #1c2226;
+  border-radius: 12px;
+  padding: 16px 40px;
+  margin-top: 20px;
+}
+
+.frame img {
+  width: 200px;
+  display: block;
+  margin: auto;
+}
+
+.text {
+  font-size: 28px;
+  font-style: italic;
+  background: linear-gradient(90deg, #b8860b, #ffd700, #b8860b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bar {
+  max-width: 700px;
+  margin: 20px auto;
+}
+
+button {
+  background: #232b30;
+  color: #ddd;
+  border: 1px solid #3a444a;
+  border-radius: 6px;
+  padding: 8px 14px;
+  margin: 4px;
+  cursor: pointer;
+}
+
+button.on {
+  background: #0d6efd;
+  color: #fff;
+}
+
+#pic {
+  transition: .3s;
+}
+
+.gray   { 
+  filter: grayscale(1);
+ }
+.xray   { 
+  filter: grayscale(1) invert(1); 
+}
+.invert { 
+  filter: invert(1); 
+}
+.fliph  { 
+  transform: scaleX(-1);
+ }
+.flipv  { transform: scaleY(-1); }
+.glow   { filter: drop-shadow(0 0 12px gold); }
+.shadow { filter: drop-shadow(5px 5px 6px #000); }
+.bold   { filter: drop-shadow(8px 8px 0 #000); }
+.drop   { filter: drop-shadow(0 8px 8px #f55); }
+.blur   { filter: blur(3px); }
+.wave   { filter: url(#wave); }
+.alpha  { filter: opacity(.4); }
+.mask   {
+  -webkit-mask-image: radial-gradient(circle, #000 50%, transparent 72%);
+  mask-image: radial-gradient(circle, #000 50%, transparent 72%);
+}

@@ -1,0 +1,52 @@
+.fa-facebook{
+  color: #1565C0;
+  position: fixed;  
+  top: 10px;       
+  right: 10px;  
+  font-size: 65px;
+}
+body{
+    background-color: white;
+    margin: 0;
+}
+.khung{
+    max-width: 800px;
+    width: 100%;
+    margin: auto;
+    background-color: white;
+    padding: 20px;
+}
+header{
+    margin: auto;
+    text-align: center;
+    color: #1565C0 ;
+}
+.anh{
+    width: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 15px;
+}
+.chu{
+    text-align: justify;
+    line-height: 1.6;
+    color: black;
+    margin: 10px 0;
+}
+.chu::first-letter{
+    font-size: 3.2em;
+    color: #C62828 ;
+    float: left;
+    line-height: 0.8;
+    margin-right: 8px;
+}
+h3{
+    color:  #FFFFFF;
+    background-color:  #1565C0;
+    text-align: right;
+    padding: 8px 15px;
+}
+.name{
+    font-weight: bold;
+}

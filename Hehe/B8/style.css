@@ -1,0 +1,47 @@
+.heading {
+    color: #1668C1;
+    border-bottom: 1px solid#1668C1;
+}
+.container {
+    display: flex;
+}
+.menu {
+    display:flex;
+    flex-direction: column;
+    padding-right: 25px;
+    padding-left: 10px;
+    background-color: #d6eaff6a;
+    width:20%;
+}
+h4 {
+    color:rgba(42, 32, 32, 0.479);
+}
+a {
+    color: #1668C1;
+    text-decoration: none;
+}
+.section {
+    width: 80%;
+    padding: 10px;
+    margin: 10px;
+}
+.item {
+    overflow: auto;
+    border-bottom: 1px dashed rgba(190, 190, 190, 0.432);
+}
+img {
+    float: right;
+    margin: 10px;
+    border-radius: 6px;
+}
+.lv1 {
+    background-color: #1668C1;
+    border-radius: 6px;
+    color: white;
+    padding: 5px;
+    clear:both;
+}
+.lv2 {
+    color: #1668C1;
+    font-weight: bold;
+}

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALQ Ship - Thông báo & cảnh báo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for better visual quality */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        /* Custom Toggle Switch Animation */
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #2563eb;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #2563eb;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans text-slate-800 antialiased min-h-screen flex flex-col md:flex-row">
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="w-full md:w-64 bg-white border-r border-slate-200 flex-shrink-0 flex flex-col justify-between z-20">
+        <div>
+            <!-- Logo Section -->
+            <div class="h-16 flex items-center px-6 border-b border-slate-100 justify-between md:justify-start">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center shadow-md shadow-blue-500/20">
+                        <i class="fa-solid font-bold fa-truck-fast text-lg"></i>
+                    </div>
+                    <span class="text-xl font-bold tracking-tight text-slate-900">ALQ <span class="text-blue-600">Ship</span></span>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden text-slate-500 hover:text-slate-700 focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Navigation Links -->
+            <nav id="navMenu" class="px-3 py-4 space-y-1 hidden md:block">
+                <a href="#" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900 font-medium transition-colors">
+                    <i class="fa-solid fa-house w-5 text-center text-slate-400"></i>
+                    <span>Trang chủ</span>
+                </a>
+                <a href="#" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900 font-medium transition-colors">
+                    <i class="fa-solid fa-box-archive w-5 text-center text-slate-400"></i>
+                    <span>Đơn hàng</span>
+                </a>
+                <a href="#" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900 font-medium transition-colors">
+                    <i class="fa-solid fa-truck-ramp-box w-5 text-center text-slate-400"></i>
+                    <span>Đơn vị vận chuyển</span>
+                </a>
+                <a href="#" class="flex items-center justify-between px-3 py-2.5 rounded-lg bg-blue-50 text-blue-600 font-semibold transition-colors">
+                    <div class="flex items-center space-x-3">
+                        <i class="fa-solid fa-bell w-5 text-center text-blue-600"></i>
+                        <span>Thông báo & cảnh báo</span>
+                    </div>
+                    <span class="w-2 h-2 rounded-full bg-blue-600"></span>
+                </a>
+                <a href="#" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900 font-medium transition-colors">
+                    <i class="fa-solid fa-database w-5 text-center text-slate-400"></i>
+                    <span>Quản lý dữ liệu</span>
+                </a>
+                <a href="#" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900 font-medium transition-colors">
+                    <i class="fa-solid fa-users w-5 text-center text-slate-400"></i>
+                    <span>Khách hàng</span>
+                </a>
+                <a href="#" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900 font-medium transition-colors">
+                    <i class="fa-solid fa-chart-pie w-5 text-center text-slate-400"></i>
+                    <span>Báo cáo</span>
+                </a>
+            </nav>
+        </div>
+
+        <div class="p-3 border-t border-slate-100 hidden md:block space-y-1">
+            <a href="#" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900 font-medium transition-colors">
+                <i class="fa-solid fa-circle-user w-5 text-center text-slate-400"></i>
+                <span>Tài khoản của tôi</span>
+            </a>
+            <a href="#" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900 font-medium transition-colors">
+                <i class="fa-solid fa-headset w-5 text-center text-slate-400"></i>
+                <span>Hỗ trợ</span>
+            </a>
+        </div>
+    </aside>
+
+    <div class="flex-1 flex flex-col min-w-0 overflow-hidden">
+        
+        <!-- Header Bar -->
+        <header class="h-16 bg-white border-b border-slate-200 px-4 md:px-8 flex items-center justify-between flex-shrink-0">
+            <!-- Breadcrumbs -->
+            <nav class="flex items-center space-x-2 text-sm text-slate-500 font-medium overflow-x-auto py-2">
+                <a href="#" class="hover:text-slate-800 transition-colors">Trang chủ</a>
+                <i class="fa-solid fa-chevron-right text-xs text-slate-300"></i>
+                <a href="#" class="hover:text-slate-800 transition-colors">Cài đặt</a>
+                <i class="fa-solid fa-chevron-right text-xs text-slate-300"></i>
+                <span class="text-slate-900 font-semibold whitespace-nowrap">Thông báo & cảnh báo</span>
+            </nav>
+
+            <!-- Search & User Actions -->
+            <div class="flex items-center space-x-3 md:space-x-4">
+                <!-- Search input -->
+                <div class="relative hidden sm:block w-48 lg:w-64">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                    <input type="text" placeholder="Tìm kiếm cài đặt..." class="w-full pl-9 pr-4 py-1.5 text-sm rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all">
+                </div>
+
+                <!-- Notification Bell -->
+                <button class="relative p-2 rounded-lg text-slate-500 hover:bg-slate-100 hover:text-slate-700 transition-colors">
+                    <i class="fa-regular fa-bell text-lg"></i>
+                    <span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-red-500 ring-2 ring-white"></span>
+                </button>
+
+                <!-- User Profile -->
+                <div class="flex items-center space-x-2 pl-2 border-l border-slate-200">
+                    <div class="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center text-slate-600 font-semibold text-sm border border-slate-300">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <span class="text-sm font-semibold text-slate-700 hidden md:inline-block">Admin User</span>
+                    <i class="fa-solid fa-chevron-down text-xs text-slate-400 hidden md:inline-block"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Content Container -->
+        <main class="flex-1 overflow-y-auto p-4 md:p-8 max-w-6xl w-full mx-auto space-y-6">
+            
+            <!-- Page Title Section with Master Toggle -->
+            <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                    <h1 class="text-2xl font-bold text-slate-900 tracking-tight">Thông báo & cảnh báo</h1>
+                    <p class="text-slate-500 text-sm mt-1">Cấu hình nhận thông báo tự động và quản lý kênh truyền tin cho hệ thống của bạn</p>
+                </div>
+                
+                <!-- Master Toggle -->
+                <div class="flex items-center space-x-3 bg-slate-50 p-3 rounded-xl border border-slate-200/60 self-start md:self-auto">
+                    <span class="text-sm font-semibold text-slate-700">Bật tất cả thông báo</span>
+                    <label for="masterToggle" class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" id="masterToggle" class="sr-only peer" checked>
+                        <div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Filter Bar / Tabs -->
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2 overflow-x-auto">
+                <div class="flex space-x-2 min-w-max">
+                    <button class="tab-btn active px-4 py-2 rounded-lg text-sm font-semibold bg-blue-600 text-white shadow-sm transition-all" data-tab="all">
+                        Tất cả <span class="ml-1 bg-white/20 text-white text-xs px-2 py-0.5 rounded-full">4</span>
+                    </button>
+                    <button class="tab-btn px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all" data-tab="today">
+                        Hôm nay
+                    </button>
+                    <button class="tab-btn px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all" data-tab="issues">
+                        Sự cố
+                    </button>
+                    <button class="tab-btn px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all" data-tab="new">
+                        Mới
+                    </button>
+                </div>
+                <div class="text-xs text-slate-400 hidden sm:block">Tự động lưu khi thay đổi</div>
+            </div>
+
+            <!-- Notification Settings List -->
+            <div class="space-y-4" id="notificationList">
+                
+                <!-- Card 1: New Order -->
+                <div class="notification-card bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md transition-all flex items-start sm:items-center justify-between gap-4" data-category="new">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center flex-shrink-0 text-lg border border-blue-100">
+                            <i class="fa-solid fa-box font-bold"></i>
+                        </div>
+                        <div>
+                            <div class="flex items-center space-x-2">
+                                <h3 class="font-semibold text-slate-900">Đơn hàng mới</h3>
+                                <span class="text-[11px] font-medium bg-blue-50 text-blue-700 px-2 py-0.5 rounded-full border border-blue-100">Mới</span>
+                            </div>
+                            <p class="text-sm text-slate-500 mt-0.5">Nhận thông báo ngay khi có đơn hàng mới được tạo thành công trên hệ thống</p>
+                        </div>
+                    </div>
+                    <label class="relative inline-flex items-center cursor-pointer flex-shrink-0">
+                        <input type="checkbox" class="sr-only peer setting-toggle" checked>
+                        <div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                    </label>
+                </div>
+
+                <!-- Card 2: Order Confirmed -->
+                <div class="notification-card bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md transition-all flex items-start sm:items-center justify-between gap-4" data-category="today">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center flex-shrink-0 text-lg border border-emerald-100">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <div>
+                            <div class="flex items-center space-x-2">
+                                <h3 class="font-semibold text-slate-900">Đơn hàng đã được xác nhận</h3>
+                            </div>
+                            <p class="text-sm text-slate-500 mt-0.5">Gửi thông báo khi đơn hàng được đơn vị vận chuyển tiếp nhận và bàn giao thành công</p>
+                        </div>
+                    </div>
+                    <label class="relative inline-flex items-center cursor-pointer flex-shrink-0">
+                        <input type="checkbox" class="sr-only peer setting-toggle" checked>
+                        <div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                    </label>
+                </div>
+
+                <!-- Card 3: Order Issues -->
+                <div class="notification-card bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md transition-all flex items-start sm:items-center justify-between gap-4" data-category="issues">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center flex-shrink-0 text-lg border border-amber-100">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        </div>
+                        <div>
+                            <div class="flex items-center space-x-2">
+                                <h3 class="font-semibold text-slate-900">Đơn hàng gặp sự cố</h3>
+                                <span class="text-[11px] font-medium bg-amber-50 text-amber-700 px-2 py-0.5 rounded-full border border-amber-100">Ưu tiên high</span>
+                            </div>
+                            <p class="text-sm text-slate-500 mt-0.5">Cảnh báo tức thì khi đơn hàng bị giao thất bại, hoãn giao hoặc nhận khiếu nại từ người mua</p>
+                        </div>
+                    </div>
+                    <label class="relative inline-flex items-center cursor-pointer flex-shrink-0">
+                        <input type="checkbox" class="sr-only peer setting-toggle" checked>
+                        <div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                    </label>
+                </div>
+
+                <!-- Card 4: Order Delivered -->
+                <div class="notification-card bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md transition-all flex items-start sm:items-center justify-between gap-4" data-category="today">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center flex-shrink-0 text-lg border border-teal-100">
+                            <i class="fa-solid fa-truck-ramp-box"></i>
+                        </div>
+                        <div>
+                            <div class="flex items-center space-x-2">
+                                <h3 class="font-semibold text-slate-900">Đơn hàng đã giao thành công</h3>
+                            </div>
+                            <p class="text-sm text-slate-500 mt-0.5">Thông báo tức thời khi khách hàng đã hoàn tất ký nhận đơn hàng thành công</p>
+                        </div>
+                    </div>
+                    <label class="relative inline-flex items-center cursor-pointer flex-shrink-0">
+                        <input type="checkbox" class="sr-only peer setting-toggle" checked>
+                        <div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                    </label>
+                </div>
+
+            </div>
+
+            <!-- Toast Feedback Banner -->
+            <div id="toastMessage" class="fixed bottom-6 right-6 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-lg flex items-center space-x-3 opacity-0 pointer-events-none transition-all duration-300 transform translate-y-2 z-50">
+                <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                <span class="text-sm font-medium">Đã cập nhật cài đặt thông báo!</span>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const masterToggle = document.getElementById('masterToggle');
+            const settingToggles = document.querySelectorAll('.setting-toggle');
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const cards = document.querySelectorAll('.notification-card');
+            const toast = document.getElementById('toastMessage');
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navMenu = document.getElementById('navMenu');
+
+            // Toggle Mobile Navigation Menu
+            mobileMenuBtn.addEventListener('click', () => {
+                navMenu.classList.toggle('hidden');
+            });
+
+            // Show Toast Function
+            function showToast(message) {
+                if (message) {
+                    toast.querySelector('span').textContent = message;
+                }
+                toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-2');
+                toast.classList.add('opacity-100', 'translate-y-0');
+                
+                setTimeout(() => {
+                    toast.classList.remove('opacity-100', 'translate-y-0');
+                    toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-2');
+                }, 2500);
+            }
+
+            // Master Toggle Action
+            masterToggle.addEventListener('change', (e) => {
+                const isChecked = e.target.checked;
+                settingToggles.forEach(toggle => {
+                    toggle.checked = isChecked;
+                });
+                showToast(isChecked ? 'Đã bật tất cả thông báo!' : 'Đã tắt tất cả thông báo!');
+            });
+
+            // Individual Toggle Action
+            settingToggles.forEach(toggle => {
+                toggle.addEventListener('change', () => {
+                    showToast('Đã lưu thay đổi cấu hình!');
+                    
+                    // Check if all are unchecked or checked
+                    const allChecked = Array.from(settingToggles).every(t => t.checked);
+                    const noneChecked = Array.from(settingToggles).every(t => !t.checked);
+                    
+                    if (allChecked) {
+                        masterToggle.checked = true;
+                    } else if (noneChecked) {
+                        masterToggle.checked = false;
+                    }
+                });
+            });
+
+            // Tab Switching Logic
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Update active tab button style
+                    tabButtons.forEach(btn => {
+                        btn.classList.remove('active', 'bg-blue-600', 'text-white', 'shadow-sm', 'font-semibold');
+                        btn.classList.add('text-slate-600', 'font-medium');
+                    });
+                    
+                    button.classList.add('active', 'bg-blue-600', 'text-white', 'shadow-sm', 'font-semibold');
+                    button.classList.remove('text-slate-600', 'font-medium');
+
+                    // Filter Card Content
+                    const tabFilter = button.getAttribute('data-tab');
+                    cards.forEach(card => {
+                        if (tabFilter === 'all') {
+                            card.style.display = 'flex';
+                        } else {
+                            const category = card.getAttribute('data-category');
+                            if (category === tabFilter) {
+                                card.style.display = 'flex';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

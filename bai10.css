@@ -1,0 +1,82 @@
+body{
+    background-color: #e8ecef;
+    font-family: Arial, sans-serif;
+}
+
+form{
+    width: 640px;
+    margin: 40px auto;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+/* tiêu đề form */
+header{
+    background-color: #0f766e;
+    color: #FFFFFF;
+    padding: 20px 30px;
+}
+h1{
+    margin: 0 0 5px;
+    font-size: 24px;
+}
+header p{
+    margin: 0;
+    font-size: 14px;
+}
+
+/* phần thân: 2 cột */
+.than{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px 20px;
+    padding: 25px 30px;
+}
+.rong{
+    grid-column: 1 / -1;
+}
+
+/* nhãn */
+label{
+    color: #334155;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* ô nhập */
+input, select, textarea{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 6px;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+}
+.dong-y{
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    text-align: right;
+    font-weight: normal;
+}
+.dong-y input{
+    grid-column: 2;
+    width: auto;
+}
+button{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+}
+.gui{
+    background-color: #0f766e;
+    color: #FFFFFF;
+}
+.nhap-lai{
+    background-color: #e2e8f0;
+    color: #334155;
+}
